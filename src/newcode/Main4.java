@@ -12,14 +12,18 @@ class TreNode{
 }
 public class Main4 {
     private static int index = 0;
+
+    //pre 前序
+    //tempIn 中序
     private static TreNode solve(int[] pre,int[] tempIn){
         int len1 =0;//左子树节点个数
         int len2 =0;//有字数节点个数
 
         for (int i =0;i<tempIn.length;i++){
+            //pre[index=0]是root,先确定其在中序的位置，来确定左右子树元素
             if (pre[index]==tempIn[i])
-                break;
-            len1++;
+                break;//在中序中找到root跳出for
+            len1++;//左子树长度增加
         }
         len2 =tempIn.length-len1-1;
         int index1 = 0;
@@ -27,6 +31,7 @@ public class Main4 {
         int[] temp1 = new int[len1];//left
         int[] temp2 = new int[len2];//right
         boolean flag = false;
+        //分别将左右子树存入 temp1和temp2
         for (int i = 0;i<tempIn.length;i++){
             if (pre[index]==tempIn[i]){
                 flag = true;
@@ -36,16 +41,19 @@ public class Main4 {
                 temp2[index2++]=tempIn[i];
             }
         }
-        TreNode node = new TreNode(pre[index]);
+
+
+        TreNode node = new TreNode(pre[index]);//创建根,前序index=0时
         node.right = null;
         node.left = null;
-        if (index<pre.length&&temp1.length>0){
+
+        if (index<pre.length && temp1.length>0){
             index++;
-            node.left = solve(pre,temp1);
+            node.left = solve(pre,temp1);//创建左子树
         }
         if (index<pre.length && temp2.length>0){
             index++;
-            node.right = solve(pre,temp2);
+            node.right = solve(pre,temp2);//创建右子树
         }
         return node;
     }
