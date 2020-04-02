@@ -15,7 +15,7 @@ public class Main14 {
     private  static int sum;  //用来记录当前节点是倒数第几个
     private static void dfs(Node node,int k){
         if (node.next!=null){
-            dfs(node.next,k);
+            dfs(node.next,k);//递归到下一节点
         }
         sum++;
         if (sum==k){
