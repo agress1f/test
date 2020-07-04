@@ -1,8 +1,8 @@
 package newcode;
 
 public class Main35 {
-    private long sum;
-    public int InversePairs(int [] array) {
+    private static long sum;
+    public static int InversePairs(int [] array) {
        sum = 0;
        int l = 0;
        int r = array.length-1;
@@ -10,7 +10,7 @@ public class Main35 {
        return (int)(sum%1000000007);
     }
 
-    private void divide(int l, int r, int[] array) {
+    private static void divide(int l, int r, int[] array) {
         if (l!=r) {
             //确保分割为长度为1的元素
             int mid = (l + r) >> 1;
@@ -20,7 +20,7 @@ public class Main35 {
         }
     }
 
-    private void merge(int l,int r,int mid,int[] array){
+    private static void merge(int l,int r,int mid,int[] array){
         int i =l;
         int j =mid+1;
         int[] temp = new int[r-l+1];
@@ -29,12 +29,15 @@ public class Main35 {
             if (array[i]>array[j]){
                 //分割到最后是两个元素之间的比较
                 temp[index++]=array[j++];
-                sum+=mid-i+1;
+//                sum+=mid-i+1;
+
             }else {
                 temp[index++]=array[i++];
+                sum+=j-(mid+1);
             }
         }
         while (i<=mid){
+            sum+=j-(mid+1);
             temp[index++]=array[i++];
         }
         while (j<=r){
@@ -44,5 +47,11 @@ public class Main35 {
         for (int k=l;k<=r;k++){
             array[k]=temp[index++];
         }
+    }
+
+    public static void main(String[] args) {
+        int[] arr ={7,5,6,4};
+        int res = InversePairs(arr);
+        System.out.println(res);
     }
 }

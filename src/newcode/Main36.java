@@ -2,7 +2,83 @@ package newcode;
 
 import java.util.Stack;
 
-public class Main36 {
+public class
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Main36 {
     public ListNode FindFirstCommonNode(ListNode pHead1, ListNode pHead2) {
 //        Stack<ListNode> stack1 = new Stack<>();
 //        Stack<ListNode> stack2 = new Stack<>();

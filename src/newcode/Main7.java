@@ -27,5 +27,6 @@ public class Main7 {
         int n = cin.nextInt();
         System.out.println(Fibonacci(n));
 
+
     }
 }

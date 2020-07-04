@@ -66,8 +66,10 @@ public class Main4 {
 
     }
     public static void main(String[] args){
-        int[] pre = {1,2,4,7,3,5,6,8};
-        int[] in = {4,7,2,1,5,3,8,6};
+//        int[] pre = {1,2,4,7,3,5,6,8};
+//        int[] in = {4,7,2,1,5,3,8,6};
+        int[] pre = {1,2};
+        int[] in = {2,1};
         TreNode root = reConstructBinaryTree(pre,in);
         dfs1(root);
         System.out.println();
